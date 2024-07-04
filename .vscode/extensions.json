@@ -1,4 +1,24 @@
 {
+  "recommendations": [
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "ms-dotnettools.csharp",
+    "ms-dotnettools.csdevkit",
+    "streetsidesoftware.code-spell-checker",
+    "dbaeumer.vscode-eslint",
+    "antfu.goto-alias",
+    "helgardrichard.helium-icon-theme",
+    "antfu.iconify",
+    "ionic.ionic",
+    "afractal.node-essentials",
+    "nuxtr.nuxtr-vscode",
+    "christian-kohler.path-intellisense",
+    "uniquevision.vscode-plpgsql-lsp",
+    "yoavbls.pretty-ts-errors",
+    "bradlc.vscode-tailwindcss",
+    "fernandoescolar.vscode-solution-explorer",
+    "vue.volar"
+  ],
   "unwantedRecommendations": [
     "esbenp.prettier-vscode",
     "rvest.vs-code-prettier-eslint"

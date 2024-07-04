@@ -1,3 +1,3 @@
-import { generateConfig } from '@xmorthi/eslint-config';
+import { generateConfig } from '@xmorthi/eslint-config'
 
-export default generateConfig();
+export default generateConfig()

@@ -1,6 +1,5 @@
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
-import { defineNuxtPlugin } from '#app';
 
 type AvailableMethodsLowerCase = 'get' | 'post' | 'put' | 'delete' | 'patch';
 type AvailableMethodsUpperCase = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
@@ -127,11 +126,3 @@ export const createLogger = (
     tag: tags.join(' ') + ']\n[>',
   });
 };
-
-export default defineNuxtPlugin((_nuxtApp) => {
-  return {
-    provide: {
-      createLogger,
-    },
-  };
-});
