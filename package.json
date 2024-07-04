@@ -23,13 +23,15 @@
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit",
     "changelog": "changelogen --output CHANGELOG.md --bump"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.12.3"
+    "@nuxt/kit": "^3.12.3",
+    "consola": "^3.2.3"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.3.9",

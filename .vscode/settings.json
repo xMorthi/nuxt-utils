@@ -1,3 +1,15 @@
 {
-  "eslint.experimental.useFlatConfig": true
+  "eslint.experimental.useFlatConfig": true,
+  "typescript.tsserver.useSyntaxServer": "auto",
+  "vue.format.wrapAttributes": "force-expand-multiline",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "eslint.validate": ["javascript", "typescript", "vue"],
+  "vs-code-prettier-eslint.prettierLast": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "prettier.singleAttributePerLine": true,
+  "prettier.endOfLine": "lf",
+  "prettier.arrowParens": "always",
+  "prettier.singleQuote": true
 }

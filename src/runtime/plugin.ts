@@ -1,17 +1,17 @@
-import { defineNuxtPlugin } from "#app";
-import { consola } from "consola";
-import { colors } from "consola/utils";
+import { consola } from 'consola';
+import { colors } from 'consola/utils';
+import { defineNuxtPlugin } from '#app';
 
-type AvailableMethodsLowerCase = "get" | "post" | "put" | "delete" | "patch";
-type AvailableMethodsUpperCase = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
+type AvailableMethodsLowerCase = 'get' | 'post' | 'put' | 'delete' | 'patch';
+type AvailableMethodsUpperCase = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
 type TagColor =
-  | "white"
-  | "cyan"
-  | "magenta"
-  | "yellow"
-  | "blue"
-  | "red"
-  | "green";
+  | 'white'
+  | 'cyan'
+  | 'magenta'
+  | 'yellow'
+  | 'blue'
+  | 'red'
+  | 'green';
 
 type Method = AvailableMethodsLowerCase | AvailableMethodsUpperCase | string;
 
@@ -21,17 +21,17 @@ const createTagColor = (text: string, color?: TagColor) => {
   }
 
   switch (color) {
-    case "blue":
+    case 'blue':
       return colors.bgBlueBright(colors.black(text));
-    case "red":
+    case 'red':
       return colors.bgRedBright(colors.black(text));
-    case "green":
+    case 'green':
       return colors.bgGreenBright(colors.black(text));
-    case "yellow":
+    case 'yellow':
       return colors.bgYellowBright(colors.black(text));
-    case "magenta":
+    case 'magenta':
       return colors.bgMagentaBright(colors.black(text));
-    case "cyan":
+    case 'cyan':
       return colors.bgCyanBright(colors.black(text));
     default:
       return colors.bgWhite(colors.black(text));
@@ -40,38 +40,38 @@ const createTagColor = (text: string, color?: TagColor) => {
 
 const createMethodTag = (method: AvailableMethodsUpperCase) => {
   switch (method) {
-    case "GET":
-      return createTagColor(`[${method}]`, "yellow");
+    case 'GET':
+      return createTagColor(`[${method}]`, 'yellow');
     // return colors.bgYellowBright(colors.black(`[${method}]`));
-    case "POST":
-      return createTagColor(`[${method}]`, "blue");
+    case 'POST':
+      return createTagColor(`[${method}]`, 'blue');
     // return colors.bgBlueBright(colors.black(`[${method}]`));
-    case "PUT":
-      return createTagColor(`[${method}]`, "cyan");
+    case 'PUT':
+      return createTagColor(`[${method}]`, 'cyan');
     // return colors.bgCyanBright(colors.black(`[${method}]`));
-    case "DELETE":
-      return createTagColor(`[${method}]`, "red");
+    case 'DELETE':
+      return createTagColor(`[${method}]`, 'red');
     // return colors.bgRedBright(colors.black(`[${method}]`));
-    case "PATCH":
-      return createTagColor(`[${method}]`, "magenta");
+    case 'PATCH':
+      return createTagColor(`[${method}]`, 'magenta');
     // return colors.bgMagentaBright(colors.black(`[${method}]`));
     default:
-      return createTagColor(`[${method}]`, "green");
+      return createTagColor(`[${method}]`, 'green');
     // return colors.bgGreenBright(colors.black(`[${method}]`));
   }
 };
 
 const createPathTag = (method: AvailableMethodsUpperCase, path: string) => {
   switch (method) {
-    case "GET":
+    case 'GET':
       return colors.yellowBright(path);
-    case "POST":
+    case 'POST':
       return colors.blueBright(path);
-    case "PUT":
+    case 'PUT':
       return colors.cyanBright(path);
-    case "DELETE":
+    case 'DELETE':
       return colors.redBright(path);
-    case "PATCH":
+    case 'PATCH':
       return colors.magentaBright(path);
     default:
       return colors.greenBright(path);
@@ -90,17 +90,17 @@ export const createLogger = (
   }
 ) => {
   const leadingTag = createTagColor(
-    `${options?.leadingTag || ""}`,
+    `${options?.leadingTag || ''}`,
     options?.leadingTagColor
   );
   const trailingTag = createTagColor(
-    `${options?.trailingTag || ""}`,
+    `${options?.trailingTag || ''}`,
     options?.trailingTagColor
   );
 
   const method = _method.toUpperCase() as AvailableMethodsUpperCase;
 
-  const dateTag = new Date().toISOString().split("T").join(" ").split(".")[0];
+  const dateTag = new Date().toISOString().split('T').join(' ').split('.')[0];
 
   const methodTag = createMethodTag(method);
   const pathTag = createPathTag(method, path);
@@ -124,14 +124,14 @@ export const createLogger = (
   }
 
   return consola.withDefaults({
-    tag: tags.join(" ") + "]\n[>",
+    tag: tags.join(' ') + ']\n[>',
   });
 };
 
 export default defineNuxtPlugin((_nuxtApp) => {
   return {
     provide: {
-      createLogger: createLogger,
+      createLogger,
     },
   };
 });
