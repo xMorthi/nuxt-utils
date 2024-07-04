@@ -1,6 +1,6 @@
 {
   "name": "@xmorthi/nuxt-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": "xmorthi/nuxt-utils",
   "license": "MIT",
   "type": "module",
@@ -26,7 +26,7 @@
     "lint:fix": "eslint --fix .",
     "typecheck": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit",
     "changelog": "changelogen --bump --output CHANGELOG.md",
-    "changelog:commit": "git add . && git commit -m 'bump'"
+    "changelog:commit": "npm run changelog && git add . && git commit -m 'bump'"
   },
   "dependencies": {
     "@nuxt/kit": "^3.12.3",
@@ -45,6 +45,7 @@
     "typescript": "latest",
     "vitest": "^1.6.0",
     "vue-tsc": "^2.0.26",
-    "@xmorthi/eslint-config": "1.0.1"
+    "@xmorthi/eslint-config": "1.0.1",
+    "changelogen": "^0.5.5"
   }
 }
