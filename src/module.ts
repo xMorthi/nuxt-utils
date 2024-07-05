@@ -1,6 +1,9 @@
 import { defineNuxtModule, createResolver, addTemplate } from '@nuxt/kit';
 import { defu } from 'defu';
 
+export { createLogger } from './runtime/plugin';
+export type CreateLogger = typeof import('./runtime/plugin').createLogger;
+
 export default defineNuxtModule({
   meta: {
     name: 'nuxt-utils',
