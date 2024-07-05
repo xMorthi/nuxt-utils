@@ -1,5 +1,6 @@
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
+import defu from 'defu';
 
 type AvailableMethodsLowerCase = 'get' | 'post' | 'put' | 'delete' | 'patch';
 type AvailableMethodsUpperCase = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
@@ -85,9 +86,18 @@ export const createLogger = (
     leadingTagColor?: TagColor;
     trailingTag?: string;
     trailingTagColor?: TagColor;
+    showDate?: boolean;
+    showTime?: boolean;
     noDate?: boolean;
+    tagChar?: string;
   }
 ) => {
+  options = defu(options, {
+    showDate: false,
+    showTime: false,
+    noDate: false,
+    tagChar: '>',
+  });
   const leadingTag = createTagColor(
     `${options?.leadingTag || ''}`,
     options?.leadingTagColor
@@ -99,30 +109,23 @@ export const createLogger = (
 
   const method = _method.toUpperCase() as AvailableMethodsUpperCase;
 
-  const dateTag = new Date().toISOString().split('T').join(' ').split('.')[0];
-
   const methodTag = createMethodTag(method);
   const pathTag = createPathTag(method, path);
 
   const tags: string[] = [];
 
   if (!options?.noDate) {
-    tags.push(dateTag!);
-  }
-  if (leadingTag) {
-    tags.push(leadingTag);
-  }
-  if (methodTag) {
-    tags.push(methodTag);
-  }
-  if (pathTag) {
-    tags.push(pathTag);
-  }
-  if (trailingTag) {
-    tags.push(trailingTag);
+    const [date, time] = new Date().toISOString().split('.')[0].split('T');
+    if (options.showDate) { tags.push(date) }
+    if (options.showTime) { tags.push(time) }
   }
 
+  if (leadingTag) { tags.push(leadingTag) }
+  if (methodTag) { tags.push(methodTag) }
+  if (pathTag) { tags.push(pathTag) }
+  if (trailingTag) { tags.push(trailingTag) }
+
   return consola.withDefaults({
-    tag: tags.join(' ') + ']\n[>',
+    tag: tags.join(' ') + ']\n[' + options.tagChar,
   });
 };
