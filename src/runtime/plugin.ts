@@ -3,7 +3,6 @@ import { consola } from 'consola';
 import { colors } from 'consola/utils';
 import defu from 'defu';
 
-type AvailableMethodsLowerCase = 'get' | 'post' | 'put' | 'delete' | 'patch';
 type AvailableMethodsUpperCase = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
 type TagColor =
   | 'white'
@@ -13,8 +12,6 @@ type TagColor =
   | 'blue'
   | 'red'
   | 'green';
-
-type Method = AvailableMethodsLowerCase | AvailableMethodsUpperCase | string;
 
 const createTagColor = (text: string, color?: TagColor) => {
   if (!color) {
@@ -80,8 +77,7 @@ const createPathTag = (method: AvailableMethodsUpperCase, path: string) => {
 };
 
 export const createLogger = (
-  _method: Method,
-  path: string,
+  event: H3Event,
   options?: {
     leadingTag?: string;
     leadingTagColor?: TagColor;
@@ -92,7 +88,6 @@ export const createLogger = (
     noDate?: boolean;
     tagChar?: string;
   },
-  event?: H3Event
 ) => {
   if (event?.context?.logger) {
     return event?.context?.logger;
@@ -113,10 +108,10 @@ export const createLogger = (
     options?.trailingTagColor
   );
 
-  const method = _method.toUpperCase() as AvailableMethodsUpperCase;
+  const method = event.method.toUpperCase() as AvailableMethodsUpperCase;
 
   const methodTag = createMethodTag(method);
-  const pathTag = createPathTag(method, path);
+  const pathTag = createPathTag(method, event.context.matchedRoute.path);
 
   const tags: string[] = [];
 
