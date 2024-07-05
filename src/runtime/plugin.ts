@@ -1,3 +1,4 @@
+import type { H3Event } from 'h3';
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
 import defu from 'defu';
@@ -90,8 +91,13 @@ export const createLogger = (
     showTime?: boolean;
     noDate?: boolean;
     tagChar?: string;
-  }
+  },
+  event?: H3Event
 ) => {
+  if (event?.context?.logger) {
+    return event?.context?.logger;
+  }
+
   options = defu(options, {
     showDate: false,
     showTime: false,
@@ -125,7 +131,14 @@ export const createLogger = (
   if (pathTag) { tags.push(pathTag) }
   if (trailingTag) { tags.push(trailingTag) }
 
-  return consola.withDefaults({
+  const logger = consola.withDefaults({
     tag: tags.join(' ') + ']\n[' + options.tagChar,
   });
+
+  if (event?.context) {
+    event.context.logger = logger;
+    return event.context.logger;
+  }
+
+  return logger;
 };
