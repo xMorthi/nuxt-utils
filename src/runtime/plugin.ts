@@ -76,6 +76,21 @@ const createPathTag = (method: AvailableMethodsUpperCase, path: string) => {
   }
 };
 
+/**
+ * Creates a logger based on the provided event and options.
+ *
+ * @param event - The event object.
+ * @param options - The options for the logger.
+ * @param options.leadingTag - The leading tag for the logger.
+ * @param options.leadingTagColor - The color of the leading tag.
+ * @param options.trailingTag - The trailing tag for the logger.
+ * @param options.trailingTagColor - The color of the trailing tag.
+ * @param options.showDate - Whether to show the date in the logger.
+ * @param options.showTime - Whether to show the time in the logger.
+ * @param options.noDate - Whether to exclude the date from the logger.
+ * @param options.tagChar - The character used to separate tags in the logger.
+ * @returns The created logger.
+ */
 export const createLogger = (
   event: H3Event,
   options?: {
