@@ -3,7 +3,7 @@ import { consola } from 'consola';
 import { colors } from 'consola/utils';
 import defu from 'defu';
 
-type AvailableMethodsUpperCase = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+type AvailableMethodsUpperCase = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'ERROR' | 'Trapeeze';
 type TagColor =
   | 'white'
   | 'cyan'
@@ -53,6 +53,10 @@ const createMethodTag = (method: AvailableMethodsUpperCase) => {
     case 'PATCH':
       return createTagColor(`[${method}]`, 'magenta');
     // return colors.bgMagentaBright(colors.black(`[${method}]`));
+    case 'ERROR':
+      return createTagColor(`[${method}]`, 'red');
+    case 'Trapeeze':
+      return createTagColor(`[${method}]`, 'blue');
     default:
       return createTagColor(`[${method}]`, 'green');
     // return colors.bgGreenBright(colors.black(`[${method}]`));
@@ -71,6 +75,10 @@ const createPathTag = (method: AvailableMethodsUpperCase, path: string) => {
       return colors.redBright(path);
     case 'PATCH':
       return colors.magentaBright(path);
+    case 'ERROR':
+      return colors.redBright(path);
+    case 'Trapeeze':
+      return colors.blueBright(path);
     default:
       return colors.greenBright(path);
   }
@@ -126,7 +134,7 @@ export const createLogger = (
   const method = event.method.toUpperCase() as AvailableMethodsUpperCase;
 
   const methodTag = createMethodTag(method);
-  const pathTag = createPathTag(method, event.context.matchedRoute.path);
+  const pathTag = createPathTag(method, event.context.matchedRoute?.path || '');
 
   const tags: string[] = [];
 
