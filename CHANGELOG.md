@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.2.1
+
+[compare changes](https://github.com/xmorthi/nuxt-utils/compare/v1.2.0...v1.2.1)
+
+### 🏡 Chore
+
+- Support `ERROR` and `Trapeeze` methods ([ef7a639](https://github.com/xmorthi/nuxt-utils/commit/ef7a639))
+
+### ❤️ Contributors
+
+- Kamil Boron <kamilmorthi@gmail.com>
+
 ## v1.2.0
 
 [compare changes](https://github.com/xmorthi/nuxt-utils/compare/v1.0.0...v1.2.0)
