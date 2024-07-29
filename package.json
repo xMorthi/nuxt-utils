@@ -45,7 +45,7 @@
     "nuxt": "^3.12.4",
     "typescript": "latest",
     "vitest": "^1.6.0",
-    "vue-tsc": "^2.0.26",
+    "vue-tsc": "^2.0.29",
     "@xmorthi/eslint-config": "1.0.1",
     "changelogen": "^0.5.5"
   },
