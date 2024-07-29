@@ -48,6 +48,5 @@
     "vue-tsc": "^2.0.29",
     "@xmorthi/eslint-config": "1.0.1",
     "changelogen": "^0.5.5"
-  },
-  "packageManager": "pnpm@9.6.0"
+  }
 }
