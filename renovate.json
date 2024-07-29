@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":semanticCommitTypeAll(chore)"],
+  "labels": ["🚚 dependencies", "💫 PR"],
+  "baseBranches": ["dev"],
+  "rangeStrategy": "bump",
+  "npm": {
+    "commitMessageTopic": "{{prettyDepType}} {{depName}}"
+  },
+  "gradle": {
+    "enabled": false
+  },
+  "gradle-wrapper": {
+    "enabled": false
+  },
+  "cocoapods": {
+    "enabled": false
+  },
+  "nuget": {
+    "enabled": false
+  },
+  "packageRules": [
+    {
+      "matchDepTypes": [
+        "dependencies",
+        "devDependencies",
+        "peerDependencies",
+        "optionalDependencies",
+        "engines"
+      ],
+      "groupName": "{{depName}} updates",
+      "groupSlug": "all-{{depName}}-updates",
+      "separateMinorPatch": true,
+      "commitMessageTopic": "{{depName}}"
+    }
+  ]
+}
