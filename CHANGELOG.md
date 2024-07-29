@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v1.2.3
+
+[compare changes](https://github.com/xmorthi/nuxt-utils/compare/v1.2.2...v1.2.3)
+
+### 🏡 Chore
+
+- Add renovate.json configuration file ([16baf6b](https://github.com/xmorthi/nuxt-utils/commit/16baf6b))
+- Remove ci.yml workflow file ([300bea2](https://github.com/xmorthi/nuxt-utils/commit/300bea2))
+- Update npm dependency to latest stable version ([7b3d0d0](https://github.com/xmorthi/nuxt-utils/commit/7b3d0d0))
+
+### ❤️ Contributors
+
+- Kamil Boron <kamilmorthi@gmail.com>
+
 ## v1.2.2
 
 [compare changes](https://github.com/xmorthi/nuxt-utils/compare/v1.2.0...v1.2.2)
