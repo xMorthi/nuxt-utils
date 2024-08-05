@@ -1,6 +1,6 @@
 {
   "name": "@xmorthi/nuxt-utils",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "repository": "xmorthi/nuxt-utils",
   "license": "MIT",
   "type": "module",
@@ -46,7 +46,7 @@
     "typescript": "latest",
     "vitest": "^2.0.5",
     "vue-tsc": "^2.0.29",
-    "@xmorthi/eslint-config": "1.0.2",
+    "@xmorthi/eslint-config": "^1.0.3",
     "changelogen": "^0.5.5"
   }
 }
