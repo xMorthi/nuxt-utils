@@ -40,7 +40,7 @@
     "@nuxt/module-builder": "^0.8.1",
     "@nuxt/schema": "^3.12.4",
     "@nuxt/test-utils": "^3.14.0",
-    "@types/node": "^20.14.14",
+    "@types/node": "^20.14.15",
     "eslint": "^9.9.0",
     "nuxt": "^3.12.4",
     "typescript": "latest",
