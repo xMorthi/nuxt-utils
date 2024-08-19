@@ -46,7 +46,7 @@
     "typescript": "latest",
     "vitest": "^2.0.5",
     "vue-tsc": "^2.0.29",
-    "@xmorthi/eslint-config": "^1.0.3",
+    "@xmorthi/eslint-config": "^1.0.4",
     "changelogen": "^0.5.5"
   }
 }
