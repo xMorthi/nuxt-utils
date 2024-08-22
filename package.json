@@ -42,7 +42,7 @@
     "@nuxt/test-utils": "^3.14.1",
     "@types/node": "^20.16.1",
     "eslint": "^9.9.0",
-    "nuxt": "^3.12.4",
+    "nuxt": "^3.13.0",
     "typescript": "latest",
     "vitest": "^2.0.5",
     "vue-tsc": "^2.0.29",
