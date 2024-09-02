@@ -27,7 +27,8 @@
     "typecheck": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit",
     "changelog": "changelogen --bump --output CHANGELOG.md",
     "changelog:commit": "npm run changelog && git add . && git commit -m bump",
-    "ff": "npm i && npm run dev:prepare && npm run release"
+    "ri": "rm -rf node_modules && rm -rf .nuxt && rm -rf dist && rm -rf package-lock.json && npm i",
+    "ff": "npm run ri && npm run dev:prepare && npm run release"
   },
   "dependencies": {
     "@nuxt/kit": "^3.13.0",
@@ -46,7 +47,7 @@
     "typescript": "latest",
     "vitest": "^2.0.5",
     "vue-tsc": "^2.1.4",
-    "@xmorthi/eslint-config": "^1.0.5",
+    "@xmorthi/eslint-config": "^1.0.6",
     "changelogen": "^0.5.5"
   }
 }
