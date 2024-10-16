@@ -48,6 +48,6 @@
     "vitest": "^2.0.5",
     "vue-tsc": "^2.1.4",
     "@xmorthi/eslint-config": "^1.0.6",
-    "changelogen": "^0.5.5"
+    "changelogen": "^0.5.7"
   }
 }
