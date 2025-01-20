@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v1.2.9
+
+[compare changes](https://github.com/xmorthi/nuxt-utils/compare/v1.2.8...v1.2.9)
+
 ## v1.2.8
 
 [compare changes](https://github.com/xmorthi/nuxt-utils/compare/v1.2.7...v1.2.8)
