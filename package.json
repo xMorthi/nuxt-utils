@@ -45,7 +45,7 @@
     "eslint": "^9.18.0",
     "nuxt": "^3.13.2",
     "typescript": "latest",
-    "vitest": "^2.1.8",
+    "vitest": "^3.0.2",
     "vue-tsc": "^2.1.10",
     "@xmorthi/eslint-config": "^1.0.8",
     "changelogen": "^0.5.7"
